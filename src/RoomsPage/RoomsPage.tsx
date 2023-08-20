@@ -1,12 +1,15 @@
 import { AccountCircle, Add, ArrowDropDownOutlined, BeenhereOutlined, CalendarMonthOutlined, EmailOutlined, FaceOutlined, FavoriteBorderOutlined, PersonAddAltOutlined, SearchOutlined, TuneOutlined } from "@mui/icons-material";
-import { Container, Stack, Typography, Box, Button, useTheme, Input, ImageList, ImageListItem, ImageListItemBar,Fab } from "@mui/material";
+import { Container, Stack, Typography, Box, Button, useTheme, Input, ImageList, ImageListItem, ImageListItemBar, Fab } from "@mui/material";
 
 const RoomsPage = () => {
     const theme = useTheme();
     return (
         <div style={{ color: theme.palette.primary.main }}>
-            <Fab style={{backgroundColor:theme.palette.secondary.main,color:"#000", position:"fixed",top:"87vh",left:"168.5px"}}aria-label="add">
-                <Add/>
+            <Box sx={{ height: "7vh", width: "100%", backgroundColor: theme.palette.primary.main,paddingLeft:"4rem",paddingTop:"1rem" }}>
+                <Typography fontFamily={"Ubuntu,sans-serif"} variant="h5" color={"#fff"}>Home</Typography>
+            </Box>
+            <Fab style={{ backgroundColor: theme.palette.secondary.main, color: "#000", position: "fixed", top: "87vh", left: "168.5px" }} aria-label="add">
+                <Add />
             </Fab>
 
             <Box sx={{ backgroundColor: theme.palette.primary.main, height: "26vh", display: "flex", justifyContent: "center", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px" }}>
@@ -32,29 +35,29 @@ const RoomsPage = () => {
                 </Stack>
             </Box>
 
-            <Box borderTop={"solid .15rem"} borderColor={theme.palette.primary.light} sx={{marginTop: "2.5rem",marginLeft: "20px",marginRight:"20px",paddingTop:"0.5rem"}}>
+            <Box borderTop={"solid .15rem"} borderColor={theme.palette.primary.light} sx={{ marginTop: "2.5rem", marginLeft: "20px", marginRight: "20px", paddingTop: "0.5rem" }}>
                 <Typography fontFamily={"Ubuntu,sans-serif"} variant="h6" color={"inherit"} fontWeight={"600"}>Vistos anteriormente</Typography>
             </Box>
-            <Box sx={{ height: "18vh", width: "100%", marginLeft: "20px" }}>    
-                <ImageList sx={{ display: "flex", flexDirection: "row", height: "23vh", overflow: "scroll",margin:"0px",marginTop:".4rem" }}>
+            <Box sx={{ height: "18vh", width: "100%", marginLeft: "20px" }}>
+                <ImageList sx={{ display: "flex", flexDirection: "row", height: "23vh", overflow: "scroll", margin: "0px", marginTop: ".4rem" }}>
                     {itemData.map((item) => (
-                        <ImageListItem style={{ height:"16vh",width: "45vw", marginRight: "5px" }} key={item.img}>
-                            <Box sx={{display:"flex",justifyContent:"space-evenly",flexWrap:"wrap",alignContent:"center",position:"absolute",width:"3rem",height:"1.3rem",right:"10px",bottom:"25px",backgroundColor:theme.palette.secondary.main,borderRadius:"20px"}}>
+                        <ImageListItem style={{ height: "16vh", width: "45vw", marginRight: "5px" }} key={item.img}>
+                            <Box sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap", alignContent: "center", position: "absolute", width: "3rem", height: "1.3rem", right: "10px", bottom: "25px", backgroundColor: theme.palette.secondary.main, borderRadius: "20px" }}>
                                 <Typography fontFamily={"Ubuntu,sans-serif"} variant="body1" fontWeight={600} color={"#000"} fontSize={"12px"}>75</Typography>
-                                <BeenhereOutlined sx={{ color:"#000",fontSize:"18px"}} />
+                                <BeenhereOutlined sx={{ color: "#000", fontSize: "18px" }} />
                             </Box>
-                            <Box sx={{paddingLeft:"5px",display:"flex",flexDirection:"column",alignContent:"left",position:"absolute",width:"10rem",height:"4rem",left:"0px",bottom:"-50px"}}>
+                            <Box sx={{ paddingLeft: "5px", display: "flex", flexDirection: "column", alignContent: "left", position: "absolute", width: "10rem", height: "4rem", left: "0px", bottom: "-50px" }}>
                                 <Typography marginBottom={"-3px"} fontFamily={"Ubuntu,sans-serif"} variant="h6" fontSize={"12px"} fontWeight={"600"}>{item.author}</Typography>
                                 <Typography fontFamily={"Ubuntu,sans-serif"} variant="h6" fontSize={"13px"} fontWeight={"600"}>{item.title}</Typography>
                                 <Typography fontFamily={"Ubuntu,sans-serif"} variant="h6" fontSize={"12px"} fontWeight={"100"}>{item.price}</Typography>
                             </Box>
-                            <img style={{ height:"16vh",width: "45vw", borderRadius: "15px" }}
+                            <img style={{ height: "16vh", width: "45vw", borderRadius: "15px" }}
                                 src={`${item.img}`}
                                 srcSet={`${item.img}`}
                                 alt={item.title}
                                 loading="lazy"
                             />
-                            <ImageListItemBar sx={{padding:"0px"}}
+                            <ImageListItemBar sx={{ padding: "0px" }}
                                 position="below"
                             />
                         </ImageListItem>
@@ -62,27 +65,27 @@ const RoomsPage = () => {
                 </ImageList>
             </Box>
 
-            <Box borderTop={"solid .15rem"} borderColor={theme.palette.primary.light} sx={{marginTop: "2.5rem",marginLeft: "20px",marginRight:"20px",paddingTop:"0.5rem"}}>
+            <Box borderTop={"solid .15rem"} borderColor={theme.palette.primary.light} sx={{ marginTop: "2.5rem", marginLeft: "20px", marginRight: "20px", paddingTop: "0.5rem" }}>
                 <Typography fontFamily={"Ubuntu,sans-serif"} variant="h6" color={"inherit"} fontWeight={"600"}>Sitios cercanos</Typography>
             </Box>
-            <Box sx={{width:"90vw",height:"25vh",marginTop:".5rem",marginLeft: "20px",marginRight:"20px",marginBottom:"5rem"}}>
-                <img style={{width:"90vw",height:"25vh",borderRadius:"15px"}} src="https://a.cdn-hotels.com/gdcs/production37/d1139/a8a147d0-c31d-11e8-825c-0242ac110006.jpg"/>
+            <Box sx={{ width: "90vw", height: "25vh", marginTop: ".5rem", marginLeft: "20px", marginRight: "20px", marginBottom: "5rem" }}>
+                <img style={{ width: "90vw", height: "25vh", borderRadius: "15px" }} src="https://a.cdn-hotels.com/gdcs/production37/d1139/a8a147d0-c31d-11e8-825c-0242ac110006.jpg" />
             </Box>
 
-            <Box sx={{display:"flex",justifyContent:"space-evenly",width:"100vw",height:"4rem",position:"fixed",bottom:"0",backgroundColor:"#fff",paddingTop:"7px"}}>
-                <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",width:"5rem"}}>
-                    <SearchOutlined sx={{ color: theme.palette.primary.main, my: -0.5}} />
+            <Box sx={{ display: "flex", justifyContent: "space-evenly", width: "100vw", height: "4rem", position: "fixed", bottom: "0", backgroundColor: "#fff", paddingTop: "7px" }}>
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", width: "5rem" }}>
+                    <SearchOutlined sx={{ color: theme.palette.primary.main, my: -0.5 }} />
                     <Typography fontFamily={"Ubuntu,sans-serif"} variant="body1" fontWeight={600}>Busqueda</Typography>
                 </Box>
-                <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",width:"5rem"}}>
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", width: "5rem" }}>
                     <EmailOutlined sx={{ color: theme.palette.primary.main, my: -0.5 }} />
                     <Typography fontFamily={"Ubuntu,sans-serif"} variant="body1" fontWeight={600}>Mensajes</Typography>
                 </Box>
-                <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",width:"5rem"}}>
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", width: "5rem" }}>
                     <FavoriteBorderOutlined sx={{ color: theme.palette.primary.main, my: -0.5 }} />
                     <Typography fontFamily={"Ubuntu,sans-serif"} variant="body1" fontWeight={600}>Favoritos</Typography>
                 </Box>
-                <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",width:"5rem"}}>
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", width: "5rem" }}>
                     <FaceOutlined sx={{ color: theme.palette.primary.main, my: -0.5 }} />
                     <Typography fontFamily={"Ubuntu,sans-serif"} variant="body1" fontWeight={600}>Perfil</Typography>
                 </Box>
